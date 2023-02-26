@@ -1,4 +1,4 @@
-package com.vivek;
+package com.vivek.springjdbc;
 
 import static org.junit.Assert.assertTrue;
 
