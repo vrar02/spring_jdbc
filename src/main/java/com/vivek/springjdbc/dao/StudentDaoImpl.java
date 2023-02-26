@@ -24,6 +24,15 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
+    public void update(Student student) {
+
+        String query="update student_info set city='bengaluru' where city='banglore' and id=?";
+        int update=this.jdbcTemplate.update(query,student.getId());
+        System.out.println(update+ " row updated");
+
+    }
+
+    @Override
     public Student get(int id) {
 
         String query="select * from student_info where id=?";
@@ -41,8 +50,5 @@ public class StudentDaoImpl implements StudentDao {
 
     }
 
-    @Override
-    public void update(Student student) {
 
-    }
 }

@@ -16,7 +16,7 @@ public class App
     {
         ApplicationContext context=new AnnotationConfigApplicationContext(App.class);
 //        JdbcTemplate jdbcTemplate = context.getBean("getJdbcTemplate", JdbcTemplate.class);
-        Student student=new Student(113,"banglore","hemanth");
+        Student student=new Student(115,"banglore","hemanth");
 
 //        String query="insert into student_info(id,city,name) values(?,?,?)";
 //        int r = jdbcTemplate.update(query, student.getId(), student.getCity(), student.getName());
@@ -25,6 +25,8 @@ public class App
         StudentDao studentDao=context.getBean("studentDaoImpl",StudentDaoImpl.class);
 
         studentDao.insert(student);
+
+        studentDao.update(student);
 
     }
 }
